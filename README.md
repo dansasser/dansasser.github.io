@@ -1,4 +1,4 @@
-# Daniel T. Sasser II
+
 
 [![GitHub followers](https://img.shields.io/github/followers/dansasser?style=social)](https://github.com/dansasser)
 [![GitHub stars](https://img.shields.io/github/stars/dansasser?style=social)](https://github.com/dansasser?tab=repositories)
