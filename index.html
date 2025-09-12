@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel T. Sasser II — Research & Projects</title>
+  <style>
+    :root {
+      --bg: #f9f9fb;
+      --fg: #222;
+      --accent: #0366d6;
+      --card-bg: #fff;
+      --radius: 12px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+    }
+    header img {
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      margin: 0.5rem 0;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    section {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    section h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    #repo-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    #repo-list li {
+      background: #fafafa;
+      border-radius: var(--radius);
+      padding: 1rem;
+      transition: transform 0.2s ease;
+    }
+    #repo-list li:hover {
+      transform: translateY(-3px);
+      background: #fff;
+    }
+    #repo-list a {
+      font-weight: bold;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Modern responsiveness with container queries */
+    @container (min-width: 700px) {
+      #repo-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://dansasser.me/assets/headshot.png" alt="Daniel T. Sasser II Headshot">
+    <h1>Daniel T. Sasser II</h1>
+    <p>AI Researcher • Cognitive Architect • Software Developer</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>👋 About Me</h2>
+      <p>
+        I’m an independent AI researcher, cognitive architect, and software/web developer. 
+        My work explores governed cognition, cognitive architectures, and AI-assisted workflows.
+      </p>
+    </section>
+
+    <section>
+      <h2>🧠 Cognitive Architecture</h2>
+      <p>
+        Cognitive architecture is at the heart of my research. Instead of relying on brute-force scaling,
+        I focus on structured layers of cognition that mirror how the mind governs reasoning and memory.
+      </p>
+      <ul>
+        <li>Governed Cognition Protocols</li>
+        <li>Memory Systems (episodic, semantic, auxiliary)</li>
+        <li>Auxiliary Consolidation Protocol (ACP)</li>
+        <li>The Five Laws of Cognitive Governance</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>⚙️ SIM-ONE Framework</h2>
+      <p>
+        The SIM-ONE Framework is my modular AGI blueprint. It integrates governed cognition, agent collaboration, 
+        and memory management into a scalable architecture.
+      </p>
+      <p>
+        <a href="https://dansasser.github.io/SIM-ONE">View SIM-ONE Project →</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>📂 Featured Projects</h2>
+      <ul id="repo-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Daniel T. Sasser II — 
+    <a href="https://dansasser.me">Blog</a> • 
+    <a href="https://www.linkedin.com/in/dansasser">LinkedIn</a> • 
+    <a href="https://github.com/dansasser">GitHub</a>
+  </footer>
+
+  <script>
+    async function loadRepos() {
+      try {
+        // API endpoint for your curated list: gorombo-research
+        const url = "https://api.github.com/users/dansasser/lists/gorombo-research/repos";
+        const response = await fetch(url);
+        const repos = await response.json();
+        const list = document.getElementById("governed-cognition");
+
+        repos.forEach(repo => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <a href="https://dansasser.github.io/${repo.name}/">${repo.name}</a><br>
+            <small>${repo.description || "No description provided."}</small>
+          `;
+          list.appendChild(li);
+        });
+      } catch (err) {
+        console.error("Failed to load repo list:", err);
+      }
+    }
+    loadRepos();
+  </script>
+</body>
+</html>
