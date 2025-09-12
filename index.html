@@ -153,18 +153,18 @@
     <a href="https://github.com/dansasser">GitHub</a>
   </footer>
 
+
 <script>
 async function loadRepos() {
   try {
-    // Ask for repo list and include topics in the response
     const response = await fetch("https://api.github.com/users/dansasser/repos?per_page=100", {
-      headers: { "Accept": "application/vnd.github.mercy-preview+json" }
+      headers: { "Accept": "application/vnd.github.mercy-preview+json" } // required for topics
     });
     if (!response.ok) throw new Error("GitHub API request failed");
     const repos = await response.json();
     const list = document.getElementById("repo-list");
 
-    // Only include repos tagged with your topic
+    // Filter repos tagged with your actual topic
     repos
       .filter(repo => Array.isArray(repo.topics) && repo.topics.includes("governed-cognition"))
       .forEach(repo => {
@@ -187,6 +187,7 @@ async function loadRepos() {
 }
 loadRepos();
 </script>
+
 
 </body>
 </html>
