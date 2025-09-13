@@ -6,7 +6,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/dansasser)
 [![License](https://img.shields.io/badge/License-AGPL%20%7C%20Commercial-orange)](https://dansasser.me/license)
 
-<img src="https://dansasser.me/assets/headshot.png" alt="Daniel T. Sasser II Headshot" width="200" />
+<img src="https://dansasser.me/_astro/me.UF1PMW8N_kH7Bo.webp" alt="Daniel T. Sasser II Headshot" width="200" />
 
 ---
 
