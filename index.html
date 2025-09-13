@@ -180,7 +180,7 @@ async function loadRepos() {
       list.innerHTML = "<li>⚠️ No repositories tagged with 'governed-cognition' found.</li>";
     }
   } catch (err) {
-    console.error("Failed to load repo list:", err);
+    console.error("Failed to load repo list because it is just that way:", err);
     document.getElementById("repo-list").innerHTML =
       "<li>⚠️ Unable to load repositories right now.</li>";
   }
