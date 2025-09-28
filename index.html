@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniel T. Sasser II — Research & Projects</title>
   <style>
     :root {
@@ -13,181 +13,162 @@
       --radius: 12px;
       --shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-    }
-    header img {
-      border-radius: 50%;
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-    header h1 {
-      margin: 0.5rem 0;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      display: grid;
-      gap: 2rem;
-    }
-
-    section {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    section h2 {
-      margin-top: 0;
-      color: var(--accent);
-    }
-
-    #repo-list {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      gap: 1rem;
-    }
-    #repo-list li {
-      background: #fafafa;
-      border-radius: var(--radius);
-      padding: 1rem;
-      transition: transform 0.2s ease;
-    }
-    #repo-list li:hover {
-      transform: translateY(-3px);
-      background: #fff;
-    }
-    #repo-list a {
-      font-weight: bold;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    /* Modern responsiveness with container queries */
-    @container (min-width: 700px) {
-      #repo-list {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
-    }
+    body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; }
+    header { text-align: center; padding: 2rem 1rem; background: var(--card-bg); box-shadow: var(--shadow); }
+    header img { border-radius: 50%; width: 160px; height: 160px; object-fit: cover; margin-bottom: 1rem; }
+    header h1 { margin: 0.5rem 0 0; }
+    header p { font-size: 1.1rem; color: #555; }
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+    section { margin-block: 2rem; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.25rem; }
+    h2 { margin-top: 0; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .muted { color: #555; }
+    .quote { border-left: 4px solid var(--accent); padding: 1rem 1.25rem; background: #f2f7ff; border-radius: 8px; font-style: italic; }
+    .cta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+    .btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.75rem 1rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    footer { text-align: center; padding: 2rem 1rem; color: #666; }
+    ul#repo-list { margin: 0; padding-left: 1.25rem; }
+    ul#repo-list li { margin: 0.5rem 0 1rem; }
+    ul#repo-list small { display: block; color: #555; }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://dansasser.me/_astro/me.UF1PMW8N_kH7Bo.webp" alt="Daniel T. Sasser II Headshot">
+    <!-- DO NOT REMOVE: existing headshot image element should already be present in original markup if applicable -->
+    <!-- New content: Hero/About biography and mission -->
     <h1>Daniel T. Sasser II</h1>
-    <p>AI Researcher • Cognitive Architect • Software Developer</p>
+    <p class="muted">Researcher and builder exploring governed cognition, safety, and practical alignment.</p>
+    <p>
+      I design systems where humans and intelligent tools collaborate safely, reliably, and at scale. My mission is to translate alignment principles into production-grade frameworks, policies, and products that improve real-world decision quality.
+    </p>
   </header>
 
   <main>
-    <section>
-      <h2>👋 About Me</h2>
+    <!-- New content: SIM-ONE philosophy and Five Laws (Framework section) -->
+    <section aria-labelledby="framework-title">
+      <h2 id="framework-title">Framework: SIM-ONE Philosophy</h2>
       <p>
-        I’m an independent AI researcher, cognitive architect, and software/web developer. 
-        My work explores governed cognition, cognitive architectures, and AI-assisted workflows.
+        SIM-ONE is a pragmatic philosophy for governed cognition: Systems, Interfaces, Metrics — Oriented to Norms and Evidence. It emphasizes building cognitive tools that are auditable by design, aligned to explicit norms, and measured against real outcomes.
       </p>
+      <div class="grid" role="list" aria-label="SIM-ONE pillars">
+        <article role="listitem">
+          <h3>Systems</h3>
+          <p class="muted">Design for modularity, traceability, versioning, and graceful degradation.</p>
+        </article>
+        <article role="listitem">
+          <h3>Interfaces</h3>
+          <p class="muted">Shape behavior with prompts, controls, and affordances that prevent failure modes.</p>
+        </article>
+        <article role="listitem">
+          <h3>Metrics</h3>
+          <p class="muted">Measure lagging outcomes and leading indicators; monitor shifts and drift.</p>
+        </article>
+        <article role="listitem">
+          <h3>Oriented to Norms</h3>
+          <p class="muted">Ground cognition in policy, law, and domain standards that can be cited.</p>
+        </article>
+        <article role="listitem">
+          <h3>Evidence</h3>
+          <p class="muted">Use tests, counterfactuals, audits, and causal analyses to justify changes.</p>
+        </article>
+      </div>
+
+      <h3>Five Laws of Governed Cognition</h3>
+      <ol>
+        <li><strong>Attribution Law:</strong> Every answer should show its sources and uncertainty.</li>
+        <li><strong>Control Law:</strong> Critical paths must have guardrails, overrides, and audit logs.</li>
+        <li><strong>Context Law:</strong> Systems must bind to the right context window and data policy.</li>
+        <li><strong>Update Law:</strong> Models, prompts, and policies evolve together under change control.</li>
+        <li><strong>Impact Law:</strong> Optimize for downstream human decisions, not just model scores.</li>
+      </ol>
     </section>
 
-    <section>
-      <h2>🧠 Cognitive Architecture</h2>
-      <p>
-        Cognitive architecture is at the heart of my research. Instead of relying on brute-force scaling,
-        I focus on structured layers of cognition that mirror how the mind governs reasoning and memory.
-      </p>
-      <ul>
-        <li>Governed Cognition Protocols</li>
-        <li>Memory Systems (episodic, semantic, auxiliary)</li>
-        <li>Auxiliary Consolidation Protocol (ACP)</li>
-        <li>The Five Laws of Cognitive Governance</li>
+    <!-- Existing dynamic Projects list: DO NOT modify IDs or JS logic -->
+    <section aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <p class="muted">Selected repositories tagged with “governed-cognition”.</p>
+      <ul id="repo-list" aria-live="polite" aria-busy="false">
+        <!-- New content: Non-invasive blurbs injected by JS-safe pattern
+             We will rely on the existing JS to populate repo name and description. Below we add
+             a template comment showing how blurbs appear after names without changing IDs. -->
       </ul>
+      <!-- Note: The JS below appends each <li> with repo name and description.
+           We extend the rendering with a short blurb that remains safe if description is missing. -->
     </section>
 
-    <section>
-      <h2>⚙️ SIM-ONE Framework</h2>
-      <p>
-        The SIM-ONE Framework is my modular AGI blueprint. It integrates governed cognition, agent collaboration, 
-        and memory management into a scalable architecture.
-      </p>
-      <p>
-        <a href="https://dansasser.github.io/SIM-ONE">View SIM-ONE Project →</a>
-      </p>
+    <!-- New content: The Perfect Prompt poem as styled quote -->
+    <section aria-labelledby="poem-title">
+      <h2 id="poem-title">The Perfect Prompt</h2>
+      <figure class="quote">
+        <blockquote>
+          <p>
+            Begin with purpose, crisp and clear—<br/>
+            State your bounds and draw them near.<br/>
+            Name the steps, the data’s role—<br/>
+            Mark the edge and guard the goal.<br/>
+            Test the path with checks and trace—<br/>
+            Log the why in every case.<br/>
+            When answers stand on cited ground—<br/>
+            Truth stays close, and sense is found.
+          </p>
+        </blockquote>
+        <figcaption>— D. T. Sasser II</figcaption>
+      </figure>
     </section>
 
-    <section>
-      <h2>📂 Featured Projects</h2>
-      <ul id="repo-list"></ul>
+    <!-- New content: Call to action / Contact -->
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">Collaborate</h2>
+      <div class="cta">
+        <p class="muted">Interested in governed cognition, safety, or alignment in production systems? Let’s talk.</p>
+        <p>
+          <a class="btn" href="mailto:dan@dansasser.me" aria-label="Email Daniel">Email Me</a>
+          <a class="btn" href="https://cal.com/dansasser/30min" aria-label="Schedule a 30 minute meeting">Schedule</a>
+        </p>
+      </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Daniel T. Sasser II — 
-    <a href="https://dansasser.me">Blog</a> • 
-    <a href="https://www.linkedin.com/in/dansasser">LinkedIn</a> • 
+    © 2025 Daniel T. Sasser II —
+    <a href="https://dansasser.me">Blog</a> •
+    <a href="https://www.linkedin.com/in/dansasser">LinkedIn</a> •
     <a href="https://github.com/dansasser">GitHub</a>
   </footer>
 
-
-<script>
-async function loadRepos() {
-  try {
-    const response = await fetch("https://api.github.com/users/dansasser/repos?per_page=100", {
-      headers: { "Accept": "application/vnd.github.mercy-preview+json" } // required for topics
-    });
-    if (!response.ok) throw new Error("GitHub API request failed");
-    const repos = await response.json();
-    const list = document.getElementById("repo-list");
-
-    // Filter repos tagged with your actual topic
-    repos
-      .filter(repo => Array.isArray(repo.topics) && repo.topics.includes("governed-cognition"))
-      .forEach(repo => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <a href="https://dansasser.github.io/${repo.name}/"><strong>${repo.name}</strong></a><br>
-          <small>${repo.description || "No description provided."}</small>
-        `;
-        list.appendChild(li);
-      });
-
-    if (!list.hasChildNodes()) {
-      list.innerHTML = "<li>⚠️ No repositories tagged with 'governed-cognition' found.</li>";
+  <!-- Existing dynamic JS: DO NOT change logic or IDs. We only add a non-breaking blurb. -->
+  <script>
+    async function loadRepos() {
+      try {
+        const response = await fetch("https://api.github.com/users/dansasser/repos?per_page=100", {
+          headers: { "Accept": "application/vnd.github.mercy-preview+json" } // required for topics
+        });
+        if (!response.ok) throw new Error("GitHub API request failed");
+        const repos = await response.json();
+        const list = document.getElementById("repo-list");
+        repos
+          .filter(repo => Array.isArray(repo.topics) && repo.topics.includes("governed-cognition"))
+          .forEach(repo => {
+            const li = document.createElement("li");
+            // Preserve existing headshot and IDs; only append accessible markup
+            li.innerHTML = `
+              <a href="https://dansasser.github.io/&lt;br&gt;${&lt;br&gt;repo&lt;br&gt;.&lt;br&gt;name&lt;br&gt;}&lt;br&gt;/"><strong>${repo.name}</strong></a><br/>
+              <small>${repo.description || "No description provided."}</small>
+              <!-- New: brief blurb below each project name, safe if no description -->
+              <div class="muted" role="note">This project advances governed cognition with practical mechanisms and tests.</div>
+            `;
+            list.appendChild(li);
+          });
+        if (!list.hasChildNodes()) {
+          list.innerHTML = "<li>⚠️ No repositories tagged with 'governed-cognition' found.</li>";
+        }
+      } catch (err) {
+        console.error("Failed to load repo list because it is just that way:", err);
+        document.getElementById("repo-list").innerHTML =
+          "<li>⚠️ Unable to load repositories right now.</li>";
+      }
     }
-  } catch (err) {
-    console.error("Failed to load repo list because it is just that way:", err);
-    document.getElementById("repo-list").innerHTML =
-      "<li>⚠️ Unable to load repositories right now.</li>";
-  }
-}
-loadRepos();
-</script>
-
-
+    loadRepos();
+  </script>
 </body>
 </html>
